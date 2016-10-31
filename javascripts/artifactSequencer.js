@@ -595,27 +595,7 @@ function fillArtifactLevels(val) {
 
 function createTable() {
         //body reference
-        var body = document.getElementById("methodName");
-
-        // table row creation
-        var row = document.createElement("tr");
-
-        // put <td> at end of the table row
-        var cell = document.createElement("td");
-        cell.style.padding = "4px 4px 4px 4px";
-        var cellText = document.createTextNode("Next Artifacts: ");
-        cell.appendChild(cellText);
-        row.appendChild(cell);
-
-        cell = document.createElement("td");
-        cell.style.padding = "4px 4px 4px 4px";
-        cellText = document.createTextNode("");
-        cell.appendChild(cellText);
-        row.appendChild(cell);
-        body.appendChild(row);
-
-        //body reference
-        body = document.getElementById("stepsTable");
+        var body = document.getElementById("stepsTable");
 
         for (var i in $scope.steps) {
             var steps = $scope.steps[i];
