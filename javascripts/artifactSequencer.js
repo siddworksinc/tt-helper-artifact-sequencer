@@ -603,51 +603,16 @@ function createTable() {
         // put <td> at end of the table row
         var cell = document.createElement("td");
         cell.style.padding = "4px 4px 4px 4px";
-        var cellText = document.createTextNode("Method: ");
+        var cellText = document.createTextNode("Next Artifacts: ");
         cell.appendChild(cellText);
         row.appendChild(cell);
 
         cell = document.createElement("td");
         cell.style.padding = "4px 4px 4px 4px";
-        cellText = document.createTextNode($scope.methods[selectedMethod].name);
+        cellText = document.createTextNode("");
         cell.appendChild(cellText);
         row.appendChild(cell);
         body.appendChild(row);
-
-        //body reference
-        body = document.getElementById("summaryTable");
-
-        for (var i in $scope.summary_steps) {
-            var steps = $scope.summary_steps[i];
-            // cells creation
-            for (var j = 0; j <= steps.length-1; j++) {
-
-                // table row creation
-                var row = document.createElement("tr");
-
-                // put <td> at end of the table row
-                var cell = document.createElement("td");
-                cell.style.padding = "4px 4px 4px 4px";
-                var cellText = document.createTextNode( (j+1) + ". " + steps[j].name);
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-
-                cell = document.createElement("td");
-                cell.style.padding = "4px 4px 4px 4px";
-                cellText = document.createTextNode(steps[j].level);
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-
-                cell = document.createElement("td");
-                cell.style.padding = "4px 4px 4px 4px";
-                cellText = document.createTextNode(steps[j].cost);
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-
-                //row added to end of table body
-                body.appendChild(row);
-            }
-        } 
 
         //body reference
         body = document.getElementById("stepsTable");
@@ -662,25 +627,7 @@ function createTable() {
                 // put <td> at end of the table row
                 var cell = document.createElement("td");
                 cell.style.padding = "4px 4px 4px 4px";
-                var cellText = document.createTextNode( (j+1) + ". " + steps[j].name);
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-
-                cell = document.createElement("td");
-                cell.style.padding = "4px 4px 4px 4px";
-                cellText = document.createTextNode(steps[j].level);
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-
-                cell = document.createElement("td");
-                cell.style.padding = "4px 4px 4px 4px";
-                cellText = document.createTextNode(steps[j].cost);
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-
-                cell = document.createElement("td");
-                cell.style.padding = "4px 4px 4px 4px";
-                cellText = document.createTextNode(steps[j].cumulative);
+                var cellText = document.createTextNode( steps[j].n + " " + steps[j].name);
                 cell.appendChild(cellText);
                 row.appendChild(cell);
 
