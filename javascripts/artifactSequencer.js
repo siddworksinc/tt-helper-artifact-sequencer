@@ -480,7 +480,7 @@ function calculateArtifacts() {
   for (var i in $scope.steps) {
       var steps = $scope.steps[i];
       for (var j in steps) {
-        console.log(steps[j]);
+        // console.log(steps[j]);
         // console.log(steps[j].name);
       } 
   } 
@@ -619,21 +619,18 @@ function createTable() {
 
         for (var i in $scope.steps) {
             var steps = $scope.steps[i];
-            for (var j = 0; j <= steps.length-1; j++) {
+		// table row creation
+		var row = document.createElement("tr");
 
-                // table row creation
-                var row = document.createElement("tr");
+		// put <td> at end of the table row
+		var cell = document.createElement("td");
+		cell.style.padding = "4px 4px 4px 4px";
+		var cellText = document.createTextNode( steps.n + " " + steps.name);
+		cell.appendChild(cellText);
+		row.appendChild(cell);
 
-                // put <td> at end of the table row
-                var cell = document.createElement("td");
-                cell.style.padding = "4px 4px 4px 4px";
-                var cellText = document.createTextNode( steps[j].n + " " + steps[j].name);
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-
-                //row added to end of table body
-                body.appendChild(row);
-            }
+		//row added to end of table body
+		body.appendChild(row);
         } 
     }
 
