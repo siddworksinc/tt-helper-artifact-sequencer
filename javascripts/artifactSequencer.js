@@ -591,6 +591,14 @@ function fillArtifactLevels(val) {
     $scope.artifacts[$rootScope.world].forEach(function(c, i) {
         c.level = getLevel(c, ownedArtifacts);
     });
+	
+     var ownedArtifacts = {};
+	
+     $scope.artifacts[$rootScope.world].forEach(function(c, i) {
+	      if(c.level > 0) {
+		       c.owned = true;
+	      }
+     });
 }
 
 function createTable() {
