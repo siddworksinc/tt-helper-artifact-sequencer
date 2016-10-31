@@ -467,7 +467,7 @@ function calculateArtifacts() {
   };
 
   $scope.stateChanged();
-  $scope.getList();
+  $scope.steps = $scope.getList();
 
 	for (var i in $scope.summary_steps) {
       var steps = $scope.summary_steps[i];
